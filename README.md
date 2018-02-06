@@ -27,4 +27,7 @@ This means that you can get suitable information about the strings within the bi
 ```
 
 An example grabbing the strings from the binary `hello`.
-`./elfstrings --binary=hello --demangle`
+
+```
+./elfstrings --binary=hello --demangle
+```
