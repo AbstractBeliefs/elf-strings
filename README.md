@@ -28,8 +28,12 @@ This can prove extremely useful for quickly grabbing strings when analysing a bi
         the format you want to output as (optional, plain/json/xml) (default "plain")
 ```
 
-An example grabbing the strings from the binary `hello`.
+# Example
+
+An example grabbing the strings from the binary `hello`. Which simply calls `puts` with three strings.
 
 ```
-./elfstrings --binary=hello --demangle
+./elfstrings --binary=hello
+
+[.. todo ..]
 ```
