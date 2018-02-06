@@ -3,6 +3,8 @@ elf-strings will programmatically read an ELF binary's string sections within a 
 
 This means that you can get suitable information about the strings within the binary, such as the section they reside in, the offset in the section, etc.. This utility also has the functionality to 'demangle' C++ symbols, iterate linked libraries and print basic information about the ELF.
 
+This can prove extremely useful for quickly grabbing strings when analysing a binary.
+
 # Output
 ![alt text](https://i.imgur.com/plIdQCF.png "example of demangled strings")
 
@@ -11,7 +13,7 @@ This means that you can get suitable information about the strings within the bi
   -binary string
         the path to the ELF you wish to parse
   -demangle
-        demangle C++ symbols into their original source indentifiers, prettify found C++ symbols (optional)
+        demangle C++ symbols into their original source identifiers, prettify found C++ symbols (optional)
   -hex
         output the strings as a hexadecimal literal (optional)
   -libs
