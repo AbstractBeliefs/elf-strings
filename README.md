@@ -25,3 +25,6 @@ This means that you can get suitable information about the strings within the bi
   -output-format string
         the format you want to output as (optional, plain/json/xml) (default "plain")
 ```
+
+An example grabbing the strings from the binary `hello`.
+`./elfstrings --binary=hello --demangle`
