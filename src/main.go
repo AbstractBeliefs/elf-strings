@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	demangleOpt = flag.Bool("demangle", false, "demangle C++ symbols into their original source indentifiers, prettify found C++ symbols (optional)")
+	demangleOpt = flag.Bool("demangle", false, "demangle C++ symbols into their original source identifiers, prettify found C++ symbols (optional)")
 	hexOpt      = flag.Bool("hex", false, "output the strings as a hexadecimal literal (optional)")
 	offsetOpt   = flag.Bool("offset", true, "show the offset of the string in the section (default, recommended)")
 	binaryOpt   = flag.String("binary", "", "the path to the ELF you wish to parse")
@@ -18,6 +18,7 @@ var (
 	outputOpt   = flag.String("output-file", "", "the path of the output file that you want to output to (optional)")
 	maxOpt      = flag.Uint64("max", 0, "the maximum amount of strings that you wish to be output (optional)")
 	libOpt      = flag.Bool("libs", false, "show the linked libraries in the binary (optional)")
+	infoOpt     = flag.Bool("no-info", false, "don't show any information about the binary")
 )
 
 // ReadSection is the main logic here
@@ -109,6 +110,8 @@ func ReadBasic(reader *ElfReader) {
 			}
 		}
 	}
+
+	fmt.Println("------------------------")
 }
 
 // main is the entrypoint for this program
