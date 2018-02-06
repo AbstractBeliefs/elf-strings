@@ -1,6 +1,9 @@
 # elf-strings
 elf-strings will programmatically read an ELF binary's string sections within a given binary. This is meant to be much like the `strings` UNIX utility, however is purpose built for ELF binaries. This means that you can get suitable information about the strings within the binary, such as the section they reside in, the offset in the section, etc.. This utility also has the functionality to 'demangle' C++ symbols, iterate linked libraries and print basic information about the ELF.
 
+# Output
+![alt text](https://i.imgur.com/plIdQCF.png "example of demangled strings")
+
 # Arguments
 ```
   -binary string
