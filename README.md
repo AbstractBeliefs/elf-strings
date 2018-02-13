@@ -8,6 +8,13 @@ This can prove extremely useful for quickly grabbing strings when analysing a bi
 # Output
 ![alt text](https://i.imgur.com/plIdQCF.png "example of demangled strings")
 
+# Building
+```
+git clone https://github.com/LloydLabs/elf-strings
+cd elf-strings
+go build
+```
+
 # Arguments
 ```
   -binary string
@@ -30,10 +37,25 @@ This can prove extremely useful for quickly grabbing strings when analysing a bi
 
 # Example
 
-An example grabbing the strings from the binary `hello`. Which simply calls `puts` with three strings.
+An example grabbing the strings from the `echo` utility.
 
 ```
-./elfstrings --binary=hello
+./elf-strings --binary=/bin/echo --min=4 --max-count=10
 
-[.. todo ..]
+[+] Size: 31 kB
+[+] Arch: x86_64
+[+] Entry point: 0x401800
+[+] Class: ELFCLASS64
+[+] Byte order: LittleEndian
+
+[.dynstr+0x0]: libc.so.6
+[.dynstr+0xa]: fflush
+[.dynstr+0x11]: __printf_chk
+[.dynstr+0x1e]: setlocale
+[.dynstr+0x28]: mbrtowc
+[.dynstr+0x30]: strncmp
+[.dynstr+0x38]: strrchr
+[.dynstr+0x40]: dcgettext
+[.dynstr+0x4a]: error
+[.dynstr+0x50]: __stack_chk_fail
 ```
