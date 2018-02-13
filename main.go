@@ -83,10 +83,17 @@ func ReadSection(reader *ElfReader, section *string) {
 			}
 
 			if *offsetOpt {
-				fmt.Printf("[%s%s]: %s\n",
-					color.BlueString(*section),
-					color.GreenString("+%#x", off),
-					str)
+				if os.Getenv("NO_COLOR") != "" {
+					fmt.Printf("[%s+%#x]: %s\n",
+						*section,
+						off,
+						str)
+				} else {
+					fmt.Printf("[%s%s]: %s\n",
+						color.BlueString(*section),
+						color.GreenString("+%#x", off),
+						str)
+				}
 			} else {
 				fmt.Println(str)
 			}
